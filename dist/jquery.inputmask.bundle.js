@@ -3,7 +3,7 @@
 * https://github.com/RobinHerbots/Inputmask
 * Copyright (c) 2010 - 2019 Robin Herbots
 * Licensed under the MIT license (http://www.opensource.org/licenses/mit-license.php)
-* Version: 4.0.6
+* Version: 4.0.7-beta.0
 */
 
 (function(modules) {
@@ -1800,14 +1800,6 @@
                                 if (skipInputEvent === true) {
                                     skipInputEvent = false;
                                     return e.preventDefault();
-                                }
-                                if (mobile) {
-                                    var args = arguments;
-                                    setTimeout(function() {
-                                        eventHandler.apply(that, args);
-                                        caret(that, that.inputmask.caretPos, undefined, true);
-                                    }, 0);
-                                    return false;
                                 }
                                 break;
 

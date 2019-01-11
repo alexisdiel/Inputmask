@@ -28,7 +28,7 @@ module.exports = function (grunt) {
                     mangle: false,
                     compress: false,
                     output: {
-                        ascii_only : true,
+                        ascii_only: true,
                         comments: false
                     }
                 }
@@ -41,7 +41,7 @@ module.exports = function (grunt) {
                     mangle: false,
                     compress: false,
                     output: {
-                        ascii_only : true,
+                        ascii_only: true,
                         comments: false
                     }
                 }
@@ -57,7 +57,7 @@ module.exports = function (grunt) {
                 mangle: false,
                 compress: false,
                 output: {
-                    ascii_only : true,
+                    ascii_only: true,
                     comments: false
                 }
             }
@@ -70,7 +70,7 @@ module.exports = function (grunt) {
                 mangle: false,
                 compress: false,
                 output: {
-                    ascii_only : true,
+                    ascii_only: true,
                     comments: false
                 }
             }
@@ -79,7 +79,7 @@ module.exports = function (grunt) {
         return uglifyConfig;
     }
 
-// Project configuration.
+    // Project configuration.
     grunt.initConfig({
         pkg: grunt.file.readJSON("package.json"),
         uglify: createUglifyConfig("js"),
@@ -154,7 +154,7 @@ module.exports = function (grunt) {
         }
     });
 
-// Load the plugin that provides the tasks.
+    // Load the plugin that provides the tasks.
     require('load-grunt-tasks')(grunt);
 
     grunt.registerTask('publish', ['release', 'nugetpack', 'nugetpush']);
@@ -169,3 +169,5 @@ module.exports = function (grunt) {
     grunt.registerTask('build:major', ['bump:major', 'clean', 'webpack:build', 'uglify']);
     grunt.registerTask('default', ["availabletasks"]);
 };
+
+// npm install -g findup-sync resolve nopt grunt-known-options

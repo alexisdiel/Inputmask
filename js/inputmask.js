@@ -1908,15 +1908,15 @@ function maskScope(actionObj, maskset, opts) {
                                 skipInputEvent = false;
                                 return e.preventDefault();
                             }
-
-                            if (mobile) {
-                                var args = arguments;
-                                setTimeout(function () { //needed for caret selection when entering a char on Android 8 - #1818
-                                    eventHandler.apply(that, args);
-                                    caret(that, that.inputmask.caretPos, undefined, true);
-                                }, 0);
-                                return false;
-                            }
+ 
+                            // if (mobile) {
+                            //     var args = arguments;
+                            //     setTimeout(function () { //needed for caret selection when entering a char on Android 8 - #1818
+                            //         eventHandler.apply(that, args);
+                            //         caret(that, that.inputmask.caretPos, undefined, true);
+                            //     }, 0);
+                            //     return false;
+                            // }
                             break;
                         case "keydown":
                             //Safari 5.1.x - modal dialog fires keypress twice workaround
