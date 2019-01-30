@@ -593,7 +593,7 @@
             }
         },
         "currency": {
-            prefix: "$ ",
+            prefix: "R$ ",
             groupSeparator: ",",
             alias: "numeric",
             placeholder: "0",
