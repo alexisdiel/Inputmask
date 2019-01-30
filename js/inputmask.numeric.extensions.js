@@ -594,7 +594,8 @@
         },
         "currency": {
             prefix: "R$ ",
-            groupSeparator: ",",
+            radixPoint: ",",
+            groupSeparator: ".",
             alias: "numeric",
             placeholder: "0",
             autoGroup: true,
