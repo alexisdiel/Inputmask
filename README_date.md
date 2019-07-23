@@ -33,7 +33,7 @@ Month as digits; leading zero for single-digit months.
 Month as a three-letter abbreviation.
 - mmmm  
 Month as its full name.
--yy  
+- yy  
 Year as last two digits; leading zero for years less than 10.
 - yyyy  
 Year as 4 digits.
@@ -43,7 +43,7 @@ Hours; no leading zero for single-digit hours (12-hour clock).
 Hours; leading zero for single-digit hours (12-hour clock).
 - hhh  
 Hours; no limit
--H  
+- H  
 Hours; no leading zero for single-digit hours (24-hour clock).
 - HH  
 Hours; leading zero for single-digit hours (24-hour clock).
