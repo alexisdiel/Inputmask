@@ -1,6 +1,4 @@
-import "../node_modules/qunit/qunit/qunit.css";
-import "../css/inputmask.css";
-import Inputmask from "../index";
+import Inputmask from "../bundle";
 import jQuery from "jquery";
 
 if (Inputmask.dependencyLib === jQuery)
