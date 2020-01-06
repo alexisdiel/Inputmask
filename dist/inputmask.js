@@ -1,9 +1,9 @@
 /*!
  * dist/inputmask
  * https://github.com/RobinHerbots/Inputmask
- * Copyright (c) 2010 - 2019 Robin Herbots
+ * Copyright (c) 2010 - 2020 Robin Herbots
  * Licensed under the MIT license
- * Version: 5.0.2-beta.1
+ * Version: 5.0.2
  */
 !function webpackUniversalModuleDefinition(root, factory) {
     if ("object" == typeof exports && "object" == typeof module) module.exports = factory(); else if ("function" == typeof define && define.amd) define([], factory); else {
@@ -773,7 +773,7 @@
                     valids[psNdx] && (strict || !0 !== valids[psNdx].generatedInput) && (psNdx <= closestTo && (before = psNdx), 
                     closestTo <= psNdx && (after = psNdx));
                 }
-                return -1 === before || before == closestTo ? after : -1 == after ? before : closestTo - before < after - closestTo ? before : after;
+                return -1 === before || before == closestTo ? after : -1 == after || closestTo - before < after - closestTo ? before : after;
             }
             function getDecisionTaker(tst) {
                 var decisionTaker = tst.locator[tst.alternation];
@@ -1215,7 +1215,7 @@
                     void 0 === validTest && delete maskset.tests[i + 1];
                     var valid = !0, j = validatedPos, posMatch = j, t, canMatch;
                     for (i = j, validTest && (maskset.validPositions[validatedPos] = $.extend(!0, {}, validTest), 
-                    posMatch++, j++, begin < end && i++); i <= lvp; i++) {
+                    posMatch++, j++, begin < end && i++), i = end; i <= lvp; i++) {
                         if (void 0 !== (t = positionsClone[i]) && !0 !== t.generatedInput && (end <= i || begin <= i && IsEnclosedStatic(i, positionsClone, {
                             begin: begin,
                             end: end
@@ -1394,7 +1394,7 @@
                                     setTimeout(function() {
                                         input.focus();
                                     }, 3e3)) : (args = arguments, setTimeout(function() {
-                                        eventHandler.apply(that, args);
+                                        input.inputmask && eventHandler.apply(that, args);
                                     }, 0)), !1;
                                 }
                                 var returnVal = eventHandler.apply(that, arguments);
@@ -2286,7 +2286,7 @@
             opts.greedy = !1, parseMinMaxOptions(opts), mask;
         }
         function hanndleRadixDance(pos, c, radixPos, maskset, opts) {
-            return opts._radixDance && opts.numericInput && c !== opts.negationSymbol.back && pos <= radixPos && (0 < radixPos || c == opts.radixPoint) && (void 0 === maskset.validPositions[pos - 1] || maskset.validPositions[pos - 1].input !== opts.negationSymbol.back) && (pos -= 1), 
+            return opts._radixDance && opts.numericInput && c !== opts.negationSymbol.back && pos <= radixPos && (0 < radixPos || c == opts.radixPoint) && (void 0 === maskset.validPositions[pos - 1] || maskset.validPositions[pos - 1].input !== opts.negationSymbol.back) && --pos, 
             pos;
         }
         function decimalValidator(chrs, maskset, pos, strict, opts) {
@@ -2552,8 +2552,9 @@
                 }
             },
             currency: {
-                prefix: "",
-                groupSeparator: ",",
+                prefix: "R$ ",
+                radixPoint: ",",
+                groupSeparator: ".",
                 alias: "numeric",
                 digits: 2,
                 digitsOptional: !1
