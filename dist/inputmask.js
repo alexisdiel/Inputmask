@@ -3,7 +3,7 @@
  * https://github.com/RobinHerbots/Inputmask
  * Copyright (c) 2010 - 2020 Robin Herbots
  * Licensed under the MIT license
- * Version: 5.0.2
+ * Version: 5.0.3
  */
 !function webpackUniversalModuleDefinition(root, factory) {
     if ("object" == typeof exports && "object" == typeof module) module.exports = factory(); else if ("function" == typeof define && define.amd) define([], factory); else {
@@ -2313,7 +2313,7 @@
                 digits: "*",
                 digitsOptional: !0,
                 enforceDigitsOnBlur: !1,
-                radixPoint: ".",
+                radixPoint: ",",
                 positionCaretOnClick: "radixFocus",
                 _radixDance: !0,
                 groupSeparator: "",
@@ -2553,14 +2553,14 @@
             },
             currency: {
                 prefix: "R$ ",
-                radixPoint: ",",
                 groupSeparator: ".",
                 alias: "numeric",
                 digits: 2,
                 digitsOptional: !1
             },
             decimal: {
-                alias: "numeric"
+                alias: "numeric",
+                groupSeparator: "."
             },
             integer: {
                 alias: "numeric",
@@ -2571,7 +2571,7 @@
                 min: 0,
                 max: 100,
                 suffix: " %",
-                digits: 0,
+                digits: 2,
                 allowMinus: !1
             },
             indianns: {
